@@ -39,4 +39,13 @@ public class Test2Triangle {
         Triangle t1 = new Triangle(p1, p2, p3);
         Assertions.assertTrue(t1.perimeter() > 0);
     }
+
+    @Test
+    public void testPerimeter4(){
+        Point p1 = new Point(0, 0),
+                p2 = new Point(3, 3),
+                p3 = new Point(4, 120);
+        Triangle t1 = new Triangle(p1, p2, p3);
+        Assertions.assertTrue(Math.abs(t1.perimeter() - p1.distanceTo(p2) - p2.distanceTo(p3) - p3.distanceTo(p1)) < 0.0001);
+    }
 }
